@@ -80,3 +80,42 @@ void fun(int n){
 }
 ```
 - no operation should be done above the function is called
+### Tree recursion
+- when function call himself more than one time 
+```cpp
+void fun(int n){
+ if(n>0){
+    printf("%d",n);
+    fun(n-1);
+    fun(n-1);
+ }
+}
+```
+- Time complxity depends usually O(2pow(n))
+- Space complexity O(n)
+### indirect recursion
+- more than one function calling one another in circular fashion
+```cpp
+void funA(int n){
+    if(n>0){
+        printf("%d",n);
+        funB(n-1);
+    }
+}
+void funB(int n){
+    if(n>1){
+        printf("%d",n);
+        funA(n/2);
+    }
+}
+```
+### Nested Recursion 
+- when function pass parameter as recursive call
+```cpp
+int fun(int n){
+    if(n>100)
+        return n-10;
+    else
+        return fun(fun(n+11));
+}
+````
