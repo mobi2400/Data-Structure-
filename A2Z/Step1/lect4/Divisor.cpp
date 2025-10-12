@@ -7,6 +7,7 @@ int Divisor(int n){
     while(div>0){
         if(n%div==0){
             v.emplace_back(div);
+            v.push_back(n/div);
         }
         div--;
     }
