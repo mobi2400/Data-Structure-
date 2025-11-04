@@ -312,3 +312,105 @@ void rearrange() {
     }
 }
 ```
+### Merge Sorted Arrays
+- To merge two sorted arrays into a single sorted array
+```cpp
+int merge(int arr1[], int size1, int arr2[], int size2) {
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    int arr3[size1 + size2];
+    while (i < size1 && j < size2){
+        if (arr1[i] < arr2[j]) {
+            arr3[k] = arr1[i];
+            i++;
+        }
+        else {
+            arr3[k] = arr2[j];
+            j++;
+        }
+        k++;
+    }
+    //merge the remaining elements of arr1 and arr2
+    for (; i < size1; i++) {
+        arr3[k] = arr1[i];
+        k++;
+    }
+    for (; j < size2; j++) {
+        arr3[k] = arr2[j];
+        k++;
+    }
+    return arr3;
+}
+```
+## Set operations
+- To find the intersection of two sets:
+### Union of Two Sets
+- To find the union of two sets:
+```cpp
+int unionSet(int arr1[], int size1, int arr2[], int size2) {
+    int arr3[size1 + size2];
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    while (i < size1 && j < size2) {
+        if (arr1[i] == arr2[j]) {
+            arr3[k] = arr1[i];
+            i++;
+            j++;
+        }
+        if (arr1[i] < arr2[j]) {
+            arr3[k] = arr1[i];
+            i++;
+        }
+        else {
+            arr3[k] = arr2[j];
+            j++;
+        }
+        k++;  
+    }
+     //merge the remaining elements of arr1 and arr2
+    for (; i < size1; i++) {
+        arr3[k] = arr1[i];
+        k++;
+    }
+    for (; j < size2; j++) {
+        arr3[k] = arr2[j];
+        k++;
+    }
+    return arr3;
+}
+```
+### Intersection of Two Sets
+- To find the intersection of two sets:
+```cpp
+int intersection(int arr1[], int size1, int arr2[], int size2) {
+    int arr3[size1 + size2];
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    while (i < size1 && j < size2) {
+        if (arr1[i] == arr2[j]) {
+            arr3[k] = arr1[i];
+            i++;
+            j++;
+        }
+        if (arr1[i] < arr2[j]) {
+            i++;
+        }
+        else {
+            j++;
+        }
+        k++;  
+    }
+    return arr3;
+    }
+```
+### Difference of Two Sets
+- To find the difference between two sets:
+```cpp
+int difference(int arr1[], int size1, int arr2[], int size2) {
+    int arr3[size1 + size2];
+    
+}
+```
