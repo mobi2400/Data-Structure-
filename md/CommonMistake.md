@@ -1,0 +1,4 @@
+- use `*max_element(v.begin(),v.end());`because max_element returns iterator to the max element dirctly without sorting
+    - less time complexity and space complexity
+    - max_element is in `<algorithm>` header file
+    - 0(n) time complexity
